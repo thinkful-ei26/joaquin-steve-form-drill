@@ -10,3 +10,7 @@ export const nonEmpty = value =>
 // $ Matches the end of the text
 export const email = value =>
     /^\S+@\S+$/.test(value) ? undefined : 'Must be a valid email address';
+
+export const fiveCharacters = value => value.length === 5 ? undefined: 'Must be five characters';
+
+export const isNum = value => typeof value === "number" ? undefined: "All characters must be Numbers";

@@ -1,7 +1,7 @@
 import React from 'react';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import Input from './input';
-import {required, nonEmpty, email} from '../validators';
+import {required, nonEmpty, fiveCharacters, isNum} from '../validators';
 
 export class ContactForm extends React.Component {
     onSubmit(values) {
@@ -75,31 +75,24 @@ export class ContactForm extends React.Component {
                 {successMessage}
                 {errorMessage}
                 <Field
-                    name="name"
+                    name="trackingNumber"
                     type="text"
                     component={Input}
-                    label="Name"
-                    validate={[required, nonEmpty]}
+                    label="tracking number"
+                    validate={[required, nonEmpty, fiveCharacters, isNum ]}
                 />
                 <Field
-                    name="email"
-                    type="email"
+                    name="issue"
+                    type="text"
                     component={Input}
-                    label="Email address"
-                    validate={[required, nonEmpty, email]}
+                    label="issue"
+                    validate={[required]}
                 />
                 <Field
-                    name="message"
+                    name="details"
                     element="textarea"
                     component={Input}
-                    label="Message"
-                    validate={[required, nonEmpty]}
-                />
-                <Field
-                    name="magicWord"
-                    type="text"
-                    component={Input}
-                    label="What's the magic word?"
+                    label="details"
                     validate={[required, nonEmpty]}
                 />
                 <button
