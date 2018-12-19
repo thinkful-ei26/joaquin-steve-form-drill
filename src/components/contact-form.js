@@ -5,7 +5,7 @@ import {required, nonEmpty, fiveCharacters, isNum} from '../validators';
 
 export class ContactForm extends React.Component {
     onSubmit(values) {
-        return fetch('/api/messages', {
+        return fetch('https://us-central1-delivery-form-api.cloudfunctions.net/api/report', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {
