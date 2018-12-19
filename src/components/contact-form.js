@@ -84,13 +84,18 @@ export class ContactForm extends React.Component {
                     Required"
                     validate={[required, nonEmpty, fiveCharacters, isNum ]}
                 />
-                <Field
-                    name="issue"
-                    type="select"
-                    component={Input}
-                    label="What is your issue?"
-                    validate={[required]}
-                />
+                  <div>
+        <label>What is your issue?</label>
+                  <Field  validate={[required]} name="issue" component="select" >
+                  <option></option>
+                   wrong-item, missing-part, damaged, 
+                  <option value="not-delivered">not-delivered</option>
+                  <option value="missing-part">missing-part</option>
+                  <option value="damaged">damaged</option>
+                  <option value="other">other</option>
+    
+                </Field>
+                </div>
                 <Field
                     name="details"
                     element="textarea"
