@@ -13,4 +13,4 @@ export const email = value =>
 
 export const fiveCharacters = value => value.length === 5 ? undefined: 'Must be five characters';
 
-export const isNum = value => typeof value === "number" ? undefined: "All characters must be Numbers";
+export const isNum = value => /[0-9]/.test(value) ? undefined: "All characters must be Numbers";

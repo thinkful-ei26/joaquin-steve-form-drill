@@ -68,6 +68,8 @@ export class ContactForm extends React.Component {
         }
 
         return (
+          <div>
+            <h1>Report a problem with your delivery</h1>
             <form
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
@@ -76,24 +78,25 @@ export class ContactForm extends React.Component {
                 {errorMessage}
                 <Field
                     name="trackingNumber"
-                    type="text"
+                    type="number"
                     component={Input}
-                    label="tracking number"
+                    label="Tracking number
+                    Required"
                     validate={[required, nonEmpty, fiveCharacters, isNum ]}
                 />
                 <Field
                     name="issue"
-                    type="text"
+                    type="select"
                     component={Input}
-                    label="issue"
+                    label="What is your issue?"
                     validate={[required]}
                 />
                 <Field
                     name="details"
                     element="textarea"
                     component={Input}
-                    label="details"
-                    validate={[required, nonEmpty]}
+                    label="Give more details (optional)"
+                    validate={[]}
                 />
                 <button
                     type="submit"
@@ -101,6 +104,7 @@ export class ContactForm extends React.Component {
                     Send message
                 </button>
             </form>
+            </div>
         );
     }
 }
