@@ -78,7 +78,7 @@ export class DeliveryForm extends React.Component {
           {errorMessage}
           <Field
             name='trackingNumber'
-            type='number'
+            type='text'
             component={Input}
             label='Tracking number
                     Required'
